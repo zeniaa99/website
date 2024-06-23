@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>สั่งซื้อสินค้า</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="order-form">
+            <h2>กรอกรายละเอียดข้อมูล</h2>
+            <form action="https://formspree.io/f/movaaegd" method="POST">
+                <label for="name">ชื่อ-นามสกุล:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">เบอร์ติดต่อ:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
+
+                <label for="product">สินค้า:</label>
+                <select id="product" name="product" required>
+                    <option value="custom-cake">Custom Cake</option>
+                    <option value="brownies">Brownies</option>
+                    <option value="cupcakes">Cupcakes</option>
+                </select>
+
+                <label for="quantity">จำนวน:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="date">วันที่รับ:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="message">เพิ่มเติม:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <button type="submit">สั่งออเดอร์</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Our Bakery. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        });
+    </script>
+    <form action="https://formspree.io/f/movaaegd" method="POST">
+        <!-- ฟิลด์สำหรับเก็บเลขออร์เดอร์ -->
+        <input type="hidden" id="order-number" name="order-number">
+    
+        <!-- ส่วนอื่นๆของฟอร์ม -->
+        <label for="name">ชื่อ-นามสกุล:</label>
+        <input type="text" id="name" name="name" required>
+        <!-- ข้อมูลอื่นๆของฟอร์ม -->
+    
+        <button type="submit">สั่งออเดอร์</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+            margin-right: 1em;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+        }
+        .product-section {
+            margin: 2em 0;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product {
+            flex: 1 1 calc(33.333% - 1em);
+            margin: 0.5em;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for better presentation */
+            padding: 1em;
+            background-color: #fff; /* Optional: Add background color for better contrast */
+            border-radius: 8px; /* Optional: Add border radius for rounded corners */
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: Add border radius for rounded corners */
+        }
+        .product textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .order-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+            .nav-links li {
+                margin: 0;
+                padding: 1em;
+                text-align: center;
+                border-top: 1px solid #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Our Menu</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="cakes" class="product-section">
+            <h2>Custom Cakes</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="custom-cake.jpg" alt="Custom Cake">
+                    <h3>Design Your Own Cake</h3>
+                    <p>Create a cake that suits your celebration perfectly!</p>
+                        <a href="order.html" class="order-button">Order Now</a>
+                </div>
+                <!-- Add more custom cakes here -->
+            </div>
+        </section>
+
+        <section id="brownies" class="product-section">
+            <h2>Brownies</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="brownies.jpg" alt="Brownies">
+                    <h3>Decadent Brownies</h3>
+                    <p>Rich, fudgy brownies that melt in your mouth.</p>
+                    <a href="order.html" class="order-button">Order Now</a>
+                </div>
+                <!-- Add more brownies here -->
+            </div>
+        </section>
+
+        <section id="cupcakes" class="product-section">
+            <h2>Cupcakes</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="cupcakes.jpg" alt="Cupcakes">
+                    <h3>Assorted Cupcakes</h3>
+                    <p>A variety of flavors to satisfy your sweet tooth.</p>
+                    <a href="order.html" class="order-button">Order Now</a>
+                </div>
+                <!-- Add more cupcakes here -->
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Our Bakery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>

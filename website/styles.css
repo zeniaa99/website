@@ -1,0 +1,431 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff5e6; /* เพิ่มสีพื้นหลัง */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #ff9999; /* เปลี่ยนสีให้สดใส */
+    padding: 20px 0;
+    border-bottom: 1px solid #ff6666;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff; /* เปลี่ยนสีข้อความ */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* เปลี่ยนสีลิงก์ */
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #070000; /* เปลี่ยนสีของแถบ */
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #ff9999; /* เปลี่ยนสีพื้นหลังเมนู */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #ffcc99; /* เปลี่ยนสีพื้นหลัง */
+    background-image: url('bakery-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin: 0 0 20px;
+    color: #fff; /* เปลี่ยนสีข้อความ */
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 0 0 20px;
+    color: #fff; /* เปลี่ยนสีข้อความ */
+}
+
+.hero .btn {
+    text-decoration: none;
+    color: #ffcc99; /* เปลี่ยนสีปุ่ม */
+    background-color: #ff6666;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    background-color: #fff; /* เปลี่ยนสีพื้นหลัง */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.feature img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    color: #ff6666; /* เปลี่ยนสีข้อความ */
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 40px;
+}
+
+.carousel img {
+    width: 100%;
+    scroll-snap-align: center;
+}
+
+.footer {
+    background-color: #ff9999; /* เปลี่ยนสีพื้นหลัง */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ff6666;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    color: #fff; /* เปลี่ยนสีข้อความ */
+}
+
+.order-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.order-form h2 {
+    color: #ff6666; /* เปลี่ยนสีข้อความ */
+}
+
+.order-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order-form button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff6666;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.about-us {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.about-us h2 {
+    color: #ff6666; /* เปลี่ยนสีข้อความ */
+}
+
+.about-us p {
+    color: #666;
+    line-height: 1.6;
+}
+/* เพิ่มไปในไฟล์ styles.css */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* เพิ่มเข้าไปใน styles.css */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.mySlides img {
+    width: 50%;
+    height: 300px; /* ปรับความสูงของรูปภาพตามที่ต้องการ */
+    object-fit: cover;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 50%DDD;
+    max-height: 300px; /* ปรับความสูงของสไลด์โชว์ตามที่ต้องการ */
+    overflow: hidden;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* เพิ่มเข้าไปใน styles.css */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.mySlides img {
+    width: 50%; /* ลดขนาดรูปภาพเหลือ 50% ของ slideshow-container */
+    height: 300px; /* ปรับความสูงของรูปภาพตามที่ต้องการ */
+    object-fit: cover;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 50%; /* ลดความกว้างของ slideshow-container เหลือ 50% */
+    max-height: 300px; /* ปรับความสูงของสไลด์โชว์ตามที่ต้องการ */
+    overflow: hidden;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 155, 155, 0.8);
+}
+.contact-circle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #e91e63; /* เปลี่ยนสีพื้นหลังของปุ่ม */
+    color: #fff; /* เปลี่ยนสีตัวอักษร */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.contact-circle.active {
+    transform: rotate(45deg);
+}
+
+.contact-options {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.contact-options.active {
+    display: flex;
+    opacity: 1;
+}
+
+.contact-option {
+    background-color: #ff8d8d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-option:hover {
+    background-color: #ffabab;
+}

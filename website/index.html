@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยินดีต้อนรับสู่ร้านเบเกอรี่ของเรา</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles */
+        header {
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        /* New styles for contact circle and options */
+        .contact-circle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease; /* Add transition for smooth animation */
+        }
+
+        .contact-circle.active {
+            transform: rotate(45deg); /* Rotate the contact circle icon */
+        }
+
+        .contact-options {
+            position: fixed;
+            bottom: 100px;
+            right: 40px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+            transition: opacity 0.3s ease; /* Add transition for smooth animation */
+            opacity: 0; /* Initially hide contact options */
+        }
+
+        .contact-options.active {
+            display: flex;
+            opacity: 1; /* Show contact options */
+        }
+
+        .contact-option {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ยินดีต้อนรับสู่ร้านเบเกอรี่ของเรา</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">เมนู</a></li>
+                    <li><a href="order.html">สั่งซื้อ</a></li>
+                    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>ของหวานที่อร่อยที่สุดสำหรับคุณ</h2>
+            <p>สำรวจเมนูที่น่าตื่นเต้นของเราและสั่งซื้อออนไลน์ได้ทันที</p>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="cake.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="cupcakes.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="bread.jpg" style="width:100%">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <a href="menu.html#cakes">
+                    <img src="cake.jpg" alt="เค้ก">
+                    <h3>เค้กสั่งทำ</h3>
+                    <p>เราสร้างเค้กสั่งทำสำหรับทุกโอกาส</p>
+                </a>
+            </div>
+            <div class="feature">
+                <a href="menu.html#cupcakes">
+                    <img src="cupcakes.jpg" alt="คัพเค้ก">
+                    <h3>คัพเค้ก</h3>
+                    <p>ลิ้มลองความหลากหลายของคัพเค้กที่อร่อย</p>
+                </a>
+            </div>
+            <div class="feature">
+                <a href="menu.html#breads">
+                    <img src="bread.jpg" alt="ขนมปัง">
+                    <h3>ขนมปังสด</h3>
+                    <p>สนุกกับขนมปังจากเตาของเราที่สดใหม่</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Circle -->
+    <div class="contact-circle" onclick="toggleContactOptions()">
+        ติดต่อเรา
+    </div>
+
+    <!-- Contact Options -->
+    <div class="contact-options" id="contactOptions">
+        <a href="https://www.facebook.com/" class="contact-option" target="_blank">Facebook</a>
+        <a href="https://line.me/" class="contact-option" target="_blank">Line</a>
+        <a href="https://www.instagram.com/" class="contact-option" target="_blank">Instagram</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2567 ร้านเบเกอรี่ของเรา. สงวนลิขสิทธิ์ทุกประการ.</p>
+        </div>
+    </footer>
+    
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.2964426685424!2d100.94540671526586!3d13.114097413031734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102b82f96ea9879%3A0x652d2e227561b4ae!2sBakery%20Shop!5e0!3m2!1sen!2sth!4v1623288747881!5m2!1sen!2sth" 
+    width="60%" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+</iframe>
+    <script>
+        // Existing JavaScript for slideshow
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Toggle navigation menu for mobile
+        function toggleNav() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Toggle contact options
+        function toggleContactOptions() {
+            var contactCircle = document.querySelector('.contact-circle');
+            var contactOptions = document.getElementById('contactOptions');
+
+            // Toggle active class for contact circle
+            contactCircle.classList.toggle('active');
+
+            // Toggle active class for contact options
+            contactOptions.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
